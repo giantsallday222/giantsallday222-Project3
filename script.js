@@ -11,8 +11,17 @@ const statusOutput = document.getElementById("status-output");
 const timerButton = document.getElementById("timer-button");
 const controlPanel = document.getElementById("control-panel");
 
+// ask the user for their name when the page loads using window.prompt()
+// prompt() pops up a dialog box, takes what the user types, and returns it as a string
+let userName = window.prompt("What's your name?");
+
 // Task 3 - changing the h1 text using innerHTML
-mainTitle.innerHTML = "DOM Project: Ready!";
+// if they typed a name, greet them, otherwise just show the default title
+if (userName) {
+  mainTitle.innerHTML = "Welcome " + userName + "! DOM Project: Ready!";
+} else {
+  mainTitle.innerHTML = "DOM Project: Ready!";
+}
 
 // Task 4 - adding a data-action attribute to the toggle link
 toggleButton.setAttribute("data-action", "status-toggle");
